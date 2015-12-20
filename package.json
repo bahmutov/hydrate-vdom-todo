@@ -38,6 +38,7 @@
   "devDependencies": {
     "css-loader": "0.23.0",
     "extract-text-webpack-plugin": "0.9.1",
+    "faker": "3.0.1",
     "js-beautify": "1.5.10",
     "pre-git": "3.1.1",
     "standard": "5.4.1",

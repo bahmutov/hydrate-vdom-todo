@@ -1,11 +1,10 @@
 const uuid = require('./uuid')
+const generateFakeTodos = require('./generate-fake-todos')
 
-module.exports = [{
-  what: 'todo 1',
-  done: false,
-  id: uuid()
-}, {
-  what: 'todo 2',
-  done: false,
-  id: uuid()
-}]
+function addId (todo) {
+  todo.id = uuid()
+  return todo
+}
+
+const fakeTodos = generateFakeTodos(100).map(addId)
+module.exports = fakeTodos
