@@ -1,0 +1,38 @@
+{
+  "name": "hydrate-vdom-todo",
+  "version": "1.0.0",
+  "description": "Example of a build tine hydration for virtual dom application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/hydrate-vdom-todo.git"
+  },
+  "keywords": [
+    "virtual-dom",
+    "vdom",
+    "example",
+    "hydrate",
+    "todo"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/hydrate-vdom-todo/issues"
+  },
+  "homepage": "https://github.com/bahmutov/hydrate-vdom-todo#readme",
+  "dependencies": {
+    "check-more-types": "2.10.0",
+    "lazy-ass": "1.3.0",
+    "todomvc-app-css": "2.0.3",
+    "todomvc-common": "1.0.2",
+    "vdom-to-html": "2.2.0",
+    "virtual-dom": "2.1.1"
+  },
+  "devDependencies": {
+    "webpack": "1.12.9"
+  }
+}
