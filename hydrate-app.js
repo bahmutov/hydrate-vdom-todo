@@ -11,7 +11,7 @@ const rendered = renderTodos(todos)
 
 const beautify = require('js-beautify').html
 const appMarkup = beautify(toHTML(rendered), { indent_size: 2 })
-console.log(appMarkup)
+// console.log(appMarkup)
 
 const outputIndexFilename = './dist/index.html'
 const write = require('fs').writeFileSync
