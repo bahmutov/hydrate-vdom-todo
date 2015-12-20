@@ -1,6 +1,6 @@
 const h = require('virtual-dom/h')
 
-function render(todo) {
+function render (todo) {
   return h('li', {className: todo.done ? 'completed' : '', key: todo.id}, [
     h('div', {className: 'view'}, [
       h('input', {
@@ -23,7 +23,7 @@ function render(todo) {
         }
       })
     ])
-  ]);
+  ])
 }
 
 module.exports = render

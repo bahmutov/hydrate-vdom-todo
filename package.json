@@ -4,8 +4,10 @@
   "description": "Example of a build tine hydration for virtual dom application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "test": "npm run lint",
+    "lint": "standard *.js src/*.js",
+    "build": "webpack && node hydrate-app.js",
+    "commit": "commit-wizard"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
     "hydrate",
     "todo"
   ],
+  "private": true,
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -36,7 +39,24 @@
     "css-loader": "0.23.0",
     "extract-text-webpack-plugin": "0.9.1",
     "js-beautify": "1.5.10",
+    "pre-git": "3.1.1",
+    "standard": "5.4.1",
     "style-loader": "0.13.0",
     "webpack": "1.12.9"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": [
+        "simple"
+      ],
+      "pre-commit": [
+        "npm run lint",
+        "npm run test",
+        "npm run build"
+      ],
+      "pre-push": [],
+      "post-commit": [],
+      "post-merge": []
+    }
   }
 }

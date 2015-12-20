@@ -1,5 +1,4 @@
 const toHTML = require('vdom-to-html')
-const h = require('virtual-dom/h')
 
 const read = require('fs').readFileSync
 const index = read('./index.html', 'utf-8')
@@ -11,7 +10,7 @@ const renderTodos = require('./src/render-todos')
 const rendered = renderTodos(todos)
 
 const beautify = require('js-beautify').html
-const appMarkup = beautify(toHTML(rendered), { indent_size: 2 });
+const appMarkup = beautify(toHTML(rendered), { indent_size: 2 })
 console.log(appMarkup)
 
 const outputIndexFilename = './dist/index.html'
