@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hydrate</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <h2>Example how to hydrate Virtual-Dom app at build time</h2>
+
+  <div id="app">
+<section class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <input class="new-todo" placeholder="What needs to be done?" autofocus>
+  </header>
+  <section class="main">
+    <input class="toggle-all" type="checkbox">
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list">
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Ad voluptatem voluptates quia velit voluptatem ullam aut nemo.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Ratione quis et modi nihil aut dolore harum quia.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Dolorem error natus quae assumenda voluptatibus odio voluptates inventore.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Eligendi enim earum voluptas esse vero.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Mollitia sint a expedita iusto tempora in nemo et aut.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Qui consequatur veniam omnis quia provident.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Non earum beatae eius.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Tempore distinctio non et ut nihil modi tenetur sunt.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Ut aliquam ut dolorum expedita et dicta.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Ea est inventore.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Modi aut cumque est sed id voluptas.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Qui natus omnis debitis est sed.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Ut cum iste vel aut illum.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Dolorem quos ratione architecto vel magni odio voluptates ut.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Debitis maxime soluta consequuntur odit quia aperiam sed voluptatem.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Consequatur ut et.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Officiis tempore enim sint consequuntur.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Atque eligendi in quam velit aut officia unde.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Maxime fugiat est delectus repudiandae alias iusto qui.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Dolorum temporibus neque ut aliquam quia maiores sed.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Laboriosam nam quo minus ipsum aut.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>At et in doloremque doloribus delectus deserunt.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Possimus minima nihil ducimus.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Maiores est nulla ipsam nemo.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Temporibus sed natus ratione necessitatibus facilis sunt.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Distinctio qui iusto possimus voluptatem voluptas ducimus.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Nam ullam non enim aspernatur quo aut qui omnis.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Beatae tempora pariatur deserunt quia accusamus et voluptatem sint.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Repudiandae sed laboriosam odio qui ducimus perspiciatis atque est dolorum.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Provident asperiores quis porro iusto repellendus reprehenderit.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Voluptatem at libero sit id eaque sed repellat.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Similique laudantium at quis velit.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Qui rerum non id.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Explicabo non error.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Libero eum ut qui autem reprehenderit debitis voluptas placeat.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Qui est similique velit eum corporis repellat a.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Qui natus beatae facere sit sapiente consequatur cumque praesentium labore.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Magni ea et consequatur rem nesciunt.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Nihil aperiam consectetur sunt.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Mollitia incidunt sint libero dolores dolorem recusandae et.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Illum enim rem iure voluptatem aliquid.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Maxime labore voluptatem eaque vitae quas excepturi est dolor.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Earum aliquam omnis reiciendis error sit.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Odit possimus placeat.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Beatae dolorem accusamus ipsam id voluptatem voluptas.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Necessitatibus vel debitis enim corporis.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Et ad illum fuga voluptas corporis maxime veniam.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Officiis quia repellendus illum quos tenetur quo.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Reprehenderit labore aut aperiam quod eum ratione molestias assumenda pariatur.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Alias est quia reiciendis sed ad at id neque.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Consequuntur voluptate alias sequi error.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Est autem ea ipsum voluptatem cumque eos provident ducimus.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Et quas porro sunt rerum est unde quo tempora.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Pariatur omnis et eveniet.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Aliquam adipisci itaque distinctio dolorum quod.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Eum rerum blanditiis eos neque quibusdam quam.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Quasi asperiores facere libero.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Id sit est fugiat itaque non ducimus laborum.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Vero quasi accusantium enim.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Unde aut eveniet harum voluptas debitis nesciunt vel.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Omnis fugit qui illo perspiciatis dolore nihil qui aut.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Repellendus autem eum omnis id et ut ratione molestias id.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Non ex quo consequatur dolor voluptatem fuga sunt nobis facilis.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Asperiores in facere totam et maiores aut consectetur consequuntur.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Quas ut itaque ad cum maxime placeat quidem sint.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Aut magni molestias.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Omnis quia magni quaerat porro dicta autem rerum.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Ipsum et quas autem veritatis sit.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Quos sint dolorem illo consequatur non sed.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Et culpa dolorum.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Ratione deleniti ipsam dicta ipsa aut dolorem vero.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Deserunt consectetur ut non iure illum magnam.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Error dicta inventore officiis neque.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Ea qui ab vel et iure sint eaque illum.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Laborum ut recusandae.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Distinctio sunt laudantium ipsum vel.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Et unde et deleniti vel velit quo modi odit.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Nihil occaecati consequatur quidem temporibus et et.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Sed sint aliquam in aut est dolor.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Dolor vel doloremque omnis qui debitis.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Sunt modi consequatur at facilis aut explicabo.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Et aut nisi quam qui omnis.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Consequuntur sequi cumque laboriosam voluptatum eum.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Numquam impedit ad rerum nihil quia aliquid in.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Amet totam ad quo voluptatem animi et.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Sed est vel optio sed aut adipisci.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Numquam rerum ut voluptatum quod recusandae.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Omnis et impedit voluptate quasi quia consequatur officia minima.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>In impedit eligendi inventore aut autem.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Consequatur iure ea est deleniti natus voluptatem omnis tempora.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Explicabo qui iusto unde.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Culpa rerum unde rem debitis.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Illo animi totam.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Neque sint atque commodi.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Aut voluptatem provident fuga asperiores iste exercitationem excepturi soluta.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Odit commodi et vel sapiente libero ut aut.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Velit tempore qui quae voluptatem rem voluptatibus sit qui.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Quaerat sequi dignissimos ratione consequuntur earum dolor sed.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Debitis inventore aliquam officiis id fugit molestiae ad placeat.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li class="">
+        <div class="view">
+          <input class="toggle" type="checkbox">
+          <label>Animi ducimus minus sequi dicta.</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer"><span class="todo-count"><strong>0</strong> items left</span>
+    <ul class="filters">
+      <li><a class="selected" href="#/">All</a></li>
+      <li><a class="" href="#/active">Active</a></li>
+      <li><a class="" href="#/completed">Completed</a></li>
+    </ul>
+    <button class="clear-completed" style="display: block;">Clear completed</button>
+  </footer>
+</section>
+</div>
+
+  <footer class="info">
+    <p>Created by <a href="http://twitter.com/bahmutov">Gleb Bahmutov</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
