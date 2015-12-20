@@ -6,8 +6,8 @@ const index = read('./index.html', 'utf-8')
 const todos = require('./src/data')
 console.log('initial data has %d todo(s)', todos.length)
 
-const renderTodos = require('./src/render-todos')
-const rendered = renderTodos(todos)
+const render = require('./src/render')
+const rendered = render(todos)
 
 const beautify = require('js-beautify').html
 const appMarkup = beautify(toHTML(rendered), { indent_size: 2 })
