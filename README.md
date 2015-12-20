@@ -1,6 +1,10 @@
 # hydrate-vdom-todo
 > Example of a build tine hydration for virtual dom application
 
+Live demo at [glebbahmutov.com/hydrate-vdom-todo](http://glebbahmutov.com/hydrate-vdom-todo/) -
+notice that the application appears right away, since the HTML was hydrated with the 
+initial data at build time.
+
 [![Build status][hydrate-vdom-todo-ci-image] ][hydrate-vdom-todo-ci-url]
 
 Related: [hydrate-vue-todo](https://github.com/bahmutov/hydrate-vue-todo)
