@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hydrate</title>
+  <link rel="stylesheet" href="node_modules/todomvc-common/base.css">
+  <link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+</head>
+<body>
+  <h2>Example how to hydrate Virtual-Dom app at build time</h2>
+
+  <div id="app">
+<section class="main">
+  <input class="toggle-all" type="checkbox">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul class="todo-list">
+    <li class="">
+      <div class="view">
+        <input class="toggle" type="checkbox">
+        <label>todo 1</label>
+        <button class="destroy"></button>
+      </div>
+    </li>
+    <li class="">
+      <div class="view">
+        <input class="toggle" type="checkbox">
+        <label>todo 2</label>
+        <button class="destroy"></button>
+      </div>
+    </li>
+  </ul>
+</section>
+</div>
+
+  <footer class="info">
+    <p>Created by <a href="http://twitter.com/bahmutov">Gleb Bahmutov</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
