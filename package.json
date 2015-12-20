@@ -33,7 +33,10 @@
     "virtual-dom": "2.1.1"
   },
   "devDependencies": {
+    "css-loader": "0.23.0",
+    "extract-text-webpack-plugin": "0.9.1",
     "js-beautify": "1.5.10",
+    "style-loader": "0.13.0",
     "webpack": "1.12.9"
   }
 }

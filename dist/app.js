@@ -44,12 +44,28 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	const la = __webpack_require__(1)
-	const is = __webpack_require__(2)
+	__webpack_require__(1);
+	__webpack_require__(2);
+
+	const la = __webpack_require__(3)
+	const is = __webpack_require__(4)
+
 
 
 /***/ },
 /* 1 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 3 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function initLazyAss() {
@@ -200,7 +216,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 2 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function checkMoreTypes() {
