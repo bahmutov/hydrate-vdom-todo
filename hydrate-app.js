@@ -6,7 +6,7 @@ const index = read('./index.html', 'utf-8')
 const todos = require('./src/data')
 console.log('initial data has %d todo(s)', todos.length)
 
-const render = require('./src/render')
+const render = require('./src/render/render.js')
 const rendered = render(todos)
 
 const beautify = require('js-beautify').html
