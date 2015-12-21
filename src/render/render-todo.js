@@ -1,6 +1,6 @@
 const h = require('virtual-dom/h')
 
-function render (todo) {
+function render (Todos, todo) {
   return h('li', {className: todo.done ? 'completed' : '', key: todo.id}, [
     h('div', {className: 'view'}, [
       h('input', {
@@ -8,9 +8,7 @@ function render (todo) {
         type: 'checkbox',
         checked: todo.done,
         onchange: function (e) {
-          console.log('nothing')
-          // Todos.mark(todo.id, e.target.checked);
-          // renderApp();
+          Todos.mark(todo.id, e.target.checked)
         }
       }),
       h('label', todo.what),
@@ -18,8 +16,7 @@ function render (todo) {
         className: 'destroy',
         onclick: function (e) {
           console.log('nothing')
-          // Todos.remove(todo);
-          // renderApp();
+          Todos.remove(todo)
         }
       })
     ])

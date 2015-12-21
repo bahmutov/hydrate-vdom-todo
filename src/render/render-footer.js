@@ -16,8 +16,8 @@ function hasCompleted (todos) {
   })
 }
 
-function render (todos) {
-  const remaining = countRemaining(todos)
+function render (Todos) {
+  const remaining = countRemaining(Todos.items)
   const route = hashFragment()
 
   return h('footer', {className: 'footer'}, [
@@ -48,7 +48,7 @@ function render (todos) {
     h('button', {
       className: 'clear-completed',
       style: {
-        display: hasCompleted(todos) ? 'block' : 'none'
+        display: hasCompleted(Todos.items) ? 'block' : 'none'
       },
       onclick: function () {
         // todos && todos.clearCompleted();

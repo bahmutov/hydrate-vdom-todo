@@ -1,7 +1,7 @@
 const h = require('virtual-dom/h')
 const renderTodo = require('./render-todo')
 
-function render (todos) {
+function render (Todos) {
   return h('section', {className: 'main'}, [
     h('input', {
       className: 'toggle-all',
@@ -13,7 +13,8 @@ function render (todos) {
       }
     }),
     h('label', {htmlFor: 'toggle-all'}, 'Mark all as complete'),
-    h('ul', {className: 'todo-list'}, todos.map(renderTodo))
+    h('ul', {className: 'todo-list'},
+      Todos.items.map(renderTodo.bind(null, Todos)))
   ])
 }
 

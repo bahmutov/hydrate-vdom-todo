@@ -1,14 +1,14 @@
 const h = require('virtual-dom/h')
 
-function render () {
+function render (Todos) {
   function isEnter (e) {
     return e.keyCode === 13
   }
   function onKey (e) {
+    console.log('pressed', e.target.value)
     if (isEnter(e)) {
-      // Todos.add(e.target.value)
+      Todos.add(e.target.value)
       e.target.value = ''
-      // renderApp()
     }
   }
 
