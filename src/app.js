@@ -15,7 +15,7 @@ var renderedNode = appNode.firstElementChild
 
 const VNode = require('virtual-dom/vnode/vnode')
 const VText = require('virtual-dom/vnode/vtext')
-var convertHTML = require('html-to-vdom')({
+const convertHTML = require('html-to-vdom')({
   VNode: VNode,
   VText: VText
 })

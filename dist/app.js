@@ -61,7 +61,7 @@
 
 	const VNode = __webpack_require__(28)
 	const VText = __webpack_require__(29)
-	var convertHTML = __webpack_require__(30)({
+	const convertHTML = __webpack_require__(30)({
 	  VNode: VNode,
 	  VText: VText
 	})
