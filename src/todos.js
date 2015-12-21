@@ -4,7 +4,7 @@ const uuid = require('./uuid')
 
 var Todos = {
   add: function (what) {
-    Todos.items.push({
+    Todos.items.unshift({
       what: what,
       done: false,
       id: uuid()
