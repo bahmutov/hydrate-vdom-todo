@@ -3,12 +3,12 @@
 require('../node_modules/todomvc-common/base.css')
 require('../node_modules/todomvc-app-css/index.css')
 
+const la = require('lazy-ass')
+const is = require('check-more-types')
+
 const diff = require('virtual-dom/diff')
 const patch = require('virtual-dom/patch')
 // const html2vdom = require('html2hscript')
-
-const la = require('lazy-ass')
-const is = require('check-more-types')
 
 const appNode = document.getElementById('app')
 var renderedNode = appNode.firstElementChild
@@ -22,35 +22,18 @@ var convertHTML = require('html-to-vdom')({
 const render = require('./render/render')
 var prevView = convertHTML(renderedNode.outerHTML)
 
-const uuid = require('./uuid')
-
-var Todos = {
-  add: function (what) {
-    Todos.items.push({
-      what: what,
-      done: false,
-      id: uuid()
-    })
-    renderApp()
-  },
-  mark: function (id, done) {
-    Todos.items.forEach(function (todo) {
-      if (todo.id === id) {
-        todo.done = done
-      }
-    })
-    renderApp()
-  },
-  remove: function (todo) {
-    Todos.items = Todos.items.filter(function (t) {
-      return t.id !== todo.id
-    })
-    renderApp()
-  },
-  items: require('./data.json')
-}
-
-la(is.array(Todos.items), 'expected list of todos', Todos.items)
+const Todos = require('./todos')
+// add rendering call after data methods
+Object.keys(Todos).forEach(function (key) {
+  const value = Todos[key]
+  if (is.fn(value)) {
+    Todos[key] = function () {
+      const result = value.apply(Todos, arguments)
+      renderApp()
+      return result
+    }
+  }
+})
 
 function renderApp () {
   console.log('rendering %d todos', Todos.items.length)

@@ -7,7 +7,8 @@ const todos = require('./src/data')
 console.log('initial data has %d todo(s)', todos.length)
 
 const render = require('./src/render/render.js')
-const rendered = render({ items: todos })
+const Todos = require('./src/todos')
+const rendered = render(Todos)
 
 const beautify = require('js-beautify').html
 const appMarkup = beautify(toHTML(rendered), { indent_size: 2 })
