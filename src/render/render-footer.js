@@ -4,9 +4,20 @@ function hashFragment () {
   return typeof window !== 'undefined' && window.location.hash.split('/')[1] || ''
 }
 
+function countRemaining (todos) {
+  return todos.length - todos.reduce(function (count, todo) {
+    return count + Number(todo.done)
+  }, 0)
+}
+
+function hasCompleted (todos) {
+  return todos && todos.some(function (todo) {
+    return todo.done
+  })
+}
+
 function render (todos) {
-  // const remaining = todos ? todos.countRemaining() : 0;
-  const remaining = 0
+  const remaining = countRemaining(todos)
   const route = hashFragment()
 
   return h('footer', {className: 'footer'}, [
@@ -37,7 +48,7 @@ function render (todos) {
     h('button', {
       className: 'clear-completed',
       style: {
-        display: true /* todos && todos.hasCompleted() */ ? 'block' : 'none'
+        display: hasCompleted(todos) ? 'block' : 'none'
       },
       onclick: function () {
         // todos && todos.clearCompleted();

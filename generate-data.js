@@ -6,7 +6,7 @@ function addId (todo) {
   return todo
 }
 
-const fakeTodos = generateFakeTodos(100).map(addId)
+const fakeTodos = generateFakeTodos(1).map(addId)
 const outputFilename = './src/data.json'
 const write = require('fs').writeFileSync
 write(outputFilename, JSON.stringify(fakeTodos, null, 2))
