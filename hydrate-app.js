@@ -1,18 +1,13 @@
-const toHTML = require('vdom-to-html')
-
-const read = require('fs').readFileSync
-const index = read('./index.html', 'utf-8')
-
-const todos = require('./src/data')
-console.log('initial data has %d todo(s)', todos.length)
-
-const render = require('./src/render/render.js')
+const render = require('./src/render/render')
 const Todos = require('./src/todos')
 const rendered = render(Todos)
 
+const toHTML = require('vdom-to-html')
 const beautify = require('js-beautify').html
 const appMarkup = beautify(toHTML(rendered), { indent_size: 2 })
-// console.log(appMarkup)
+
+const read = require('fs').readFileSync
+const index = read('./index.html', 'utf-8')
 
 const outputIndexFilename = './dist/index.html'
 const write = require('fs').writeFileSync

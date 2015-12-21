@@ -5,10 +5,10 @@ require('../node_modules/todomvc-app-css/index.css')
 
 const la = require('lazy-ass')
 const is = require('check-more-types')
+const tinyToast = require('tiny-toast')
 
 const diff = require('virtual-dom/diff')
 const patch = require('virtual-dom/patch')
-// const html2vdom = require('html2hscript')
 
 const appNode = document.getElementById('app')
 var renderedNode = appNode.firstElementChild
@@ -45,5 +45,7 @@ function renderApp () {
 
 console.log('initial render')
 renderApp()
+tinyToast.show('Rendered web app')
+tinyToast.hide(2000)
 
 window.renderApp = renderApp
