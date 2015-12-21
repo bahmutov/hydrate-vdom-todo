@@ -17877,7 +17877,7 @@
 	        type: 'checkbox',
 	        checked: todo.done,
 	        onchange: function (e) {
-	          Todos.mark(todo.id, e.target.checked);
+	          Todos.mark(todo.id, e.target.checked)
 	        }
 	      }),
 	      h('label', todo.what),
@@ -17885,7 +17885,7 @@
 	        className: 'destroy',
 	        onclick: function (e) {
 	          console.log('nothing')
-	          Todos.remove(todo);
+	          Todos.remove(todo)
 	        }
 	      })
 	    ])
