@@ -23,12 +23,31 @@ const render = require('./render/render')
 var prevView = convertHTML(renderedNode.outerHTML)
 
 const Todos = require('./todos')
+
+const appLabel = 'hydrate-vdom-todo'
+const todosStorageLabel = appLabel + '-items'
+var updatedTodos = localStorage.getItem(todosStorageLabel)
+if (updatedTodos) {
+  updatdTodos = JSON.parse(updatedTodos)
+  Todos.items = updatedTodos
+  console.log('set todos to local storage value with %d items',
+    updatedTodos.length)
+} else {
+  console.log('No previous todo items found')
+}
+
+function saveApp () {
+  localStorage.setItem(todosStorageLabel, JSON.stringify(Todos.items))
+}
+
 // add rendering call after data methods
+// also save items
 Object.keys(Todos).forEach(function (key) {
   const value = Todos[key]
   if (is.fn(value)) {
     Todos[key] = function () {
       const result = value.apply(Todos, arguments)
+      saveApp()
       renderApp()
       return result
     }

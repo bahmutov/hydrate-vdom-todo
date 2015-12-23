@@ -1,5 +1,5 @@
 # hydrate-vdom-todo
-> Example of a build tine hydration for virtual dom application
+> Example of a build time hydration for virtual dom application
 
 Live demo at [glebbahmutov.com/hydrate-vdom-todo](http://glebbahmutov.com/hydrate-vdom-todo/) -
 notice that the application appears right away, since the HTML was hydrated with the 
