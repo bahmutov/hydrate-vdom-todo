@@ -21,7 +21,7 @@ const convertHTML = require('html-to-vdom')({
 const render = require('virtual-todos')
 var prevView = convertHTML(renderedNode.outerHTML)
 
-const Todos = require('./todos')
+const Todos = require('todomvc-model')
 
 /* global localStorage */
 

@@ -35,6 +35,7 @@
     "tiny-toast": "1.0.2",
     "todomvc-app-css": "2.0.3",
     "todomvc-common": "1.0.2",
+    "todomvc-model": "1.0.0",
     "vdom-to-html": "2.2.0",
     "virtual-dom": "2.1.1",
     "virtual-todos": "1.2.0"

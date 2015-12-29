@@ -1,5 +1,7 @@
 const render = require('virtual-todos')
-const Todos = require('./src/todos')
+const Todos = require('todomvc-model')
+Todos.items = require('./src/data.json')
+
 const rendered = render(Todos)
 
 const toHTML = require('vdom-to-html')
