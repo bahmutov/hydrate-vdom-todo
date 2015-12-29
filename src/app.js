@@ -3,7 +3,6 @@
 require('../node_modules/todomvc-common/base.css')
 require('../node_modules/todomvc-app-css/index.css')
 
-const la = require('lazy-ass')
 const is = require('check-more-types')
 const tinyToast = require('tiny-toast')
 
@@ -19,10 +18,12 @@ const convertHTML = require('html-to-vdom')({
   VNode: VNode,
   VText: VText
 })
-const render = require('./render/render')
+const render = require('virtual-todos')
 var prevView = convertHTML(renderedNode.outerHTML)
 
 const Todos = require('./todos')
+
+/* global localStorage */
 
 const appLabel = 'hydrate-vdom-todo'
 const todosStorageLabel = appLabel + '-items'

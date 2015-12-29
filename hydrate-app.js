@@ -1,4 +1,4 @@
-const render = require('./src/render/render')
+const render = require('virtual-todos')
 const Todos = require('./src/todos')
 const rendered = render(Todos)
 
