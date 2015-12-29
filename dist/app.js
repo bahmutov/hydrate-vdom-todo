@@ -67,7 +67,7 @@
 	const render = __webpack_require__(97)
 	var prevView = convertHTML(renderedNode.outerHTML)
 
-	const Todos = __webpack_require__(111)
+	const Todos = __webpack_require__(112)
 
 	/* global localStorage */
 
@@ -17249,12 +17249,22 @@
 	const header = __webpack_require__(107)
 	const renderTodos = __webpack_require__(108)
 	const footer = __webpack_require__(110)
+	const la = __webpack_require__(111)
+	const is = __webpack_require__(3)
+	const isTodos = is.schema({
+	  items: is.array,
+	  clearCompleted: is.fn,
+	  add: is.fn,
+	  mark: is.fn,
+	  remove: is.fn
+	})
 
-	function render (todos) {
+	function render (Todos) {
+	  la(isTodos(Todos), 'Todos has incorrect interface', Todos)
 	  return h('section', {className: 'todoapp'}, [
-	    header(todos),
-	    renderTodos(todos),
-	    footer(todos)
+	    header(Todos),
+	    renderTodos(Todos),
+	    footer(Todos)
 	  ])
 	}
 
@@ -17881,42 +17891,6 @@
 
 /***/ },
 /* 111 */
-/***/ function(module, exports, __webpack_require__) {
-
-	const la = __webpack_require__(112)
-	const is = __webpack_require__(3)
-	const uuid = __webpack_require__(113)
-
-	var Todos = {
-	  add: function (what) {
-	    Todos.items.unshift({
-	      what: what,
-	      done: false,
-	      id: uuid()
-	    })
-	  },
-	  mark: function (id, done) {
-	    Todos.items.forEach(function (todo) {
-	      if (todo.id === id) {
-	        todo.done = done
-	      }
-	    })
-	  },
-	  remove: function (todo) {
-	    Todos.items = Todos.items.filter(function (t) {
-	      return t.id !== todo.id
-	    })
-	  },
-	  items: __webpack_require__(114)
-	}
-
-	la(is.array(Todos.items), 'expected list of todos', Todos.items)
-
-	module.exports = Todos
-
-
-/***/ },
-/* 112 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function initLazyAss() {
@@ -18065,6 +18039,45 @@
 	}());
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 112 */
+/***/ function(module, exports, __webpack_require__) {
+
+	const la = __webpack_require__(111)
+	const is = __webpack_require__(3)
+	const uuid = __webpack_require__(113)
+
+	var Todos = {
+	  add: function add (what) {
+	    Todos.items.unshift({
+	      what: what,
+	      done: false,
+	      id: uuid()
+	    })
+	  },
+	  mark: function mark (id, done) {
+	    Todos.items.forEach(function (todo) {
+	      if (todo.id === id) {
+	        todo.done = done
+	      }
+	    })
+	  },
+	  remove: function remove (todo) {
+	    Todos.items = Todos.items.filter(function (t) {
+	      return t.id !== todo.id
+	    })
+	  },
+	  clearCompleted: function clearCompleted () {
+	    console.log('clearCompleted not implemented')
+	  },
+	  items: __webpack_require__(114)
+	}
+
+	la(is.array(Todos.items), 'expected list of todos', Todos.items)
+
+	module.exports = Todos
+
 
 /***/ },
 /* 113 */
