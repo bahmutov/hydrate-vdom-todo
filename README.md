@@ -9,6 +9,13 @@ initial data at build time.
 
 Related: [hydrate-vue-todo](https://github.com/bahmutov/hydrate-vue-todo)
 
+## Uses
+
+* [fake-todos](https://github.com/bahmutov/fake-todos) to generate fake todo items
+* [virtual-todos](https://github.com/bahmutov/virtual-todos) for rendering virtual DOM from todos
+* [todomvc-model](https://github.com/bahmutov/todomvc-model) is the model that keeps
+  todo items and responds to outside events
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015
