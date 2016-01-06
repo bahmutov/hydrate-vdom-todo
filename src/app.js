@@ -34,7 +34,8 @@ if (updatedTodos) {
   console.log('set todos to local storage value with %d items',
     updatedTodos.length)
 } else {
-  console.log('No previous todo items found')
+  console.log('No previous todo items found, using initial')
+  Todos.items = require('./data.json')
 }
 
 function saveApp () {
