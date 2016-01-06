@@ -72,7 +72,7 @@
 	/* global localStorage */
 
 	const appLabel = 'hydrate-vdom-todo'
-	const todosStorageLabel = appLabel + '-items'
+	const todosStorageLabel = appLabel + '-todo-items'
 	var updatedTodos = localStorage.getItem(todosStorageLabel)
 	if (updatedTodos) {
 	  updatedTodos = JSON.parse(updatedTodos)
